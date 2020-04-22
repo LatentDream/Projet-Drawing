@@ -1,0 +1,52 @@
+<svg width="0" heigth="0">
+    <defs>
+        <filter id="turbulence" #turbulence width="500" height="500" x="-100" y="-100" viewBox="500 500 500 500">
+            <feTurbulence type="turbulence" baseFrequency="0.05"
+                numOctaves="5" result="fractalNoise">
+            </feTurbulence>
+            <feDisplacementMap in2="turbulence" in="SourceGraphic"
+                scale="10" xChannelSelector="R" yChannelSelector="G">
+            </feDisplacementMap>
+        </filter>
+    </defs>
+    
+    <defs>
+        <filter id="blurry" #blurry width="500" height="500" x="-100" y="-100" viewBox="500 500 500 500">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="2">
+            </feGaussianBlur>
+        </filter>
+    </defs>
+    
+    <defs>
+        <filter id="base" #base width="500" height="500" x="-100" y="-100" viewBox="500 500 500 500">
+            <feTurbulence type="turbulence" baseFrequency="0.01"
+                numOctaves="10" result="turbulence">
+            </feTurbulence>
+            <feDisplacementMap in2="turbulence" in="SourceGraphic"
+                scale="10" xChannelSelector="R" yChannelSelector="G">
+            </feDisplacementMap>
+        </filter>
+    </defs>
+    
+    <defs>
+        <filter id="noise" #noise width="500" height="500" x="-100" y="-100" viewBox="500 500 500 500">
+            <feTurbulence baseFrequency="0.05 0.4"
+                numOctaves="2" result="NOISE">
+            </feTurbulence>
+            <feDisplacementMap in2="NOISE" in="SourceGraphic"
+                scale="20" xChannelSelector="R" yChannelSelector="G">
+            </feDisplacementMap>
+        </filter>
+    </defs>
+    
+    <defs>
+        <filter id="squigly" #squigly width="500" height="500" x="-100" y="-100" viewBox="500 500 500 500">
+            <feTurbulence type="turbulence" baseFrequency="0.2"
+                numOctaves="3" result="NOISE" seed="3">
+            </feTurbulence>
+            <feDisplacementMap in2="NOISE" in="SourceGraphic"
+                scale="8" xChannelSelector="R" yChannelSelector="G">
+            </feDisplacementMap>
+        </filter>
+    </defs>
+</svg>

@@ -1,0 +1,75 @@
+.tittleBar_div {
+    width:100%;
+    background-color: rgba(33,150,243,1);
+    height: 64px;
+    text-align: right;
+    position: relative;
+    float: right;
+}
+  
+.tittleBar_left{
+    font-weight: 700;
+    color: white;
+    position: relative;
+    padding-top: -5px;
+    padding-left: 20px;
+    top: 0px;
+    float: left;
+}
+  
+.tittleBar_right_more {
+    border-width: 0px;
+    position: relative;
+    float: right;
+    color: #FFFFFF;
+    padding: 10px 0px 0px 0px;
+    margin: 0px 20px 0px 20px;
+    cursor: pointer;
+  
+}
+
+// Side Nav CSS
+.sideNavDiv {
+    width: 15%;
+}
+.sideNavButton-container {
+    width: 100%;
+}
+
+.sideNavButton {
+    width: 100%;
+}
+
+.category {
+    font-weight: bold;
+}
+
+// Main content CSS
+.info-container {
+    position : absolute;
+    top : 64px;
+    bottom : 0;
+    left : 0;
+    right : 0;
+    background : rgb(233, 233, 233);
+}
+
+.precedentButton {
+    line-height : 12px;
+    width : 18px;
+    margin-top: 10px;
+    margin-bottom : 10px;
+    margin-left : 10px;
+    position : relative;
+    float: left;
+}
+
+.nextButton {
+    line-height : 12px;
+    width : 18px;
+    margin-top: 10px;
+    margin-bottom : 10px;
+    margin-right : 70px;
+    position : relative;
+    float: right;
+}

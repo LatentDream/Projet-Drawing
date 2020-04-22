@@ -1,0 +1,93 @@
+body {
+    background-color: rgba(242, 242, 242, 1);
+    font-family: Arial;
+}
+  
+.tittleBar_div {
+    width:100%;
+    background-color: rgba(33,150,243,1);
+    height: 64px;
+    text-align: right;
+    position: relative;
+    float: right;
+}
+  
+.tittleBar_left{
+    font-weight: 700;
+    color: white;
+    position: relative;
+    padding-top: -5px;
+    padding-left: 20px;
+    top: 0px;
+    float: left;
+}
+  
+.tittleBar_right_more {
+    border-width: 0px;
+    position: relative;
+    float: right;
+    color: #FFFFFF;
+    padding: 10px 0px 0px 0px;
+    margin: 0px 20px 0px 20px;
+    cursor: pointer;
+  
+}
+
+#drawingContainer {
+    right: 75px;
+    width: 80%;
+    height: 100%;
+    float: left;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    overflow: scroll;
+}
+  
+.flexItem{
+    background-color: white;
+    width: 200px;
+    height: 320px;
+    padding: 0px 20px 0px 20px;
+    margin: 30px;
+    background-color: rgba(242, 242, 242, 1);
+    box-shadow: 1px 1px 3px #C6C6C6;
+}
+ 
+#rightsidenav {
+    border-radius: 15px;
+    position: absolute;
+    right: 6px;
+    height: 745px;
+    width: 225px;
+    top: 70px;
+    background-color: rgba(242, 242, 242, 1);
+} 
+
+#search {
+    border-radius: 10px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: white;
+    box-shadow: 1px 1px 3px #C6C6C6;
+}
+  
+#searchtitle {
+    padding-left: 10px;
+}
+
+.tags-list {
+    padding-left: 5px;
+    width: 90%;
+}
+
+#serverLoading {
+    position: absolute;
+    top: 200px;
+    left: 40%
+}
+
+#drawingLoading {
+    color: gray;
+}

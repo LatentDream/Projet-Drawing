@@ -1,0 +1,98 @@
+<!--Draw tool attributes toggle button group-->
+<mat-button-toggle-group class="attButtonGroupContainerTop" (change)="toolChange($event)" value="{{clickEventDispatcher['currentTool']}}">
+
+    <!--Draw "Crayon" tool-->
+
+    <mat-button-toggle class="buttonContainer" title="Crayon" value="pencil">
+        <mat-icon>create</mat-icon>
+    </mat-button-toggle>
+
+
+    <!--Draw "Pinceau" tool-->
+
+    <mat-button-toggle class="buttonContainer" title="Pinceau" value="brush">
+        <mat-icon>brush</mat-icon>
+    </mat-button-toggle>
+
+
+    <!--Draw "Plume" tool-->
+
+    <mat-button-toggle class="buttonContainer" title="Plume" value="feather">
+        <mat-icon>
+            <img src="https://img.icons8.com/pastel-glyph/24/000000/quill-pen.png">
+        </mat-icon>
+    </mat-button-toggle>
+
+
+
+    <!--Draw "Aérosol" tool-->
+
+    <mat-button-toggle class="buttonContainer" title="Aérosol" value="spray">
+        <mat-icon>
+            <img src="https://img.icons8.com/ios-filled/24/000000/deodorant-spray.png">
+        </mat-icon>
+    </mat-button-toggle>
+
+</mat-button-toggle-group>
+
+<div *ngIf="clickEventDispatcher['currentTool'] === 'pencil'" style="margin-left: 5px">
+    <p><b>Outil crayon</b></p>
+</div>
+<div *ngIf="clickEventDispatcher['currentTool'] === 'brush'" style="margin-left: 5px">
+    <p><b>Outil pinceau</b></p>
+</div>
+<div *ngIf="clickEventDispatcher['currentTool'] === 'spray'" style="margin-left: 5px">
+    <p><b>Outil aérosol</b></p>
+</div>
+<div *ngIf="clickEventDispatcher['currentTool'] === 'feather'" style="margin-left: 5px">
+    <p><b>Outil plume</b></p>
+</div>
+
+<div *ngIf="clickEventDispatcher['currentTool'] == 'brush'" style="margin: 10px 0px">
+    <div style="margin-left: 5px">
+        <p>Épaisseur du trait:</p>
+        <mat-slider thumbLabel min="1" max="50" [(ngModel)]="brushService.strokeWidth"></mat-slider>
+        
+        <p>Texture du trait</p>
+        <mat-radio-group class='textureButton' (change)="updateCurrentTexture($event)">
+            <mat-radio-button class='textureButton' style="width:100%" value="base" checked="checked">Base</mat-radio-button>
+            <mat-radio-button class='textureButton' style="width:100%" value="turbulence">Turbulence</mat-radio-button>
+            <mat-radio-button class='textureButton' style="width:100%" value="blurry">Flou</mat-radio-button>
+            <mat-radio-button class='textureButton' style="width:100%" value="noise">Fibreux</mat-radio-button>
+            <mat-radio-button class='textureButton' style="width:100%" value="squigly">Rugueux</mat-radio-button>
+        </mat-radio-group>
+    </div>
+</div>
+
+<div *ngIf="clickEventDispatcher['currentTool'] == 'pencil'" style="margin: 10px 0px">
+    <div style="margin-left: 5px">
+        <p>Épaisseur du trait:</p>
+        <mat-slider thumbLabel min="1" max="50" [(ngModel)]="pencilService['strokeWidth']"></mat-slider>
+    </div>
+</div>
+
+<div *ngIf="clickEventDispatcher['currentTool'] == 'spray'" style="margin: 10px 0px">
+    <div style="margin-left: 5px">
+        <p>Épaisseur du trait:</p>
+        <mat-slider thumbLabel min="20" max="100" [(ngModel)]="sprayService['strokeWidth']"></mat-slider>
+    </div>
+    <div style="margin-left: 5px">
+        <p>Fréquence d'émission</p>
+        <mat-slider thumbLabel min="10" max="1000" [(ngModel)]="sprayService['emissionPerSec']"></mat-slider>
+    </div>
+</div>
+
+<div *ngIf="clickEventDispatcher['currentTool'] == 'feather'" style="margin: 10px 0px">
+    <div style="margin-left: 5px">
+        <p>Épaisseur du trait:</p>
+        <mat-slider thumbLabel min="1" max="40" [(ngModel)]="featherService['strokeWidth']"></mat-slider>
+    </div>
+</div>
+
+
+
+<!-- ColorPicker -->
+<div style="margin-left: 5px">
+    <p><b>Palette de couleur</b></p>
+    <app-color-tool></app-color-tool>
+</div>  

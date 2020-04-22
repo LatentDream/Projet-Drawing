@@ -1,0 +1,39 @@
+.canvasPreview {
+    margin-top: 20px;
+    background-color: white;
+    width: 200px;
+    height: 200px;
+}
+
+.example-chip-list{
+    direction: ltr;
+    width: 200px;
+    height: 20px;
+    
+}
+
+.delete {
+    position : relative;
+    float: left;
+    // line-height : 12px;
+    // width : 18px;
+    // margin-top: 10px;
+    // margin-bottom : 10px;
+    // //margin-left : 10px;
+}
+
+.upload {
+    position : relative;
+    float: left;
+    // line-height : 12px;
+    // width : 18px;
+    // margin-top: 10px;
+    // margin-bottom : 10px;
+    // //margin-left : 10px;
+}
+
+.option {
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 130px;
+}

@@ -1,0 +1,53 @@
+<div>
+    <h2 mat-dialog-title>Création d'une zone de dessin</h2>
+
+    <form>
+        <label>
+            Hauteur
+            <input matInput [(ngModel)]="newWorkZone.height" name="newWorkZoneHeight" (keydown)="notListening()">
+        </label>
+        <label>
+            Largeur
+            <input matInput [(ngModel)]="newWorkZone.width" name="newWorkZoneWidth" (keydown)="notListening()">
+        </label>
+
+        <div style="text-align:center">
+            Background: 
+            <div class="square" #secondary [ngStyle]="{'background-color': colorService.backgroundColor}" (click)="colorVariables.hideColorPicker = false"></div>
+        </div>
+
+        <!--Horizontal Color Slider
+        Picked is passed from slider to the color picker-->
+        <app-color-slider
+        (color)="colorVariables.hue=$event"
+        (click)="colorVariables.color = colorVariables.hue"
+        (click)="saveBackgroundColor()">
+        </app-color-slider>
+
+        <!--Colorpicker received the hue from the color slider and the user chooses
+        the exact color on this component-->
+        <app-color-picker  class="paletteRef" #palette [hue]="colorVariables.hue"  (click)="saveBackgroundColor()" (color)="colorVariables.color = $event"></app-color-picker>
+
+        <div class="input-wrapper">
+            <div
+              class="color-div"
+              [ngStyle]="{'background-color': colorVariables.color || 'white'}"
+            ></div>
+            
+              <div> R <input type="text" #valRHex maxlength="2" minlength="2"></div>
+              <div> G <input type="text" #valGHex maxlength="2" minlength="2"></div>
+              <div> B <input type="text" #valBHex maxlength="2" minlength="2"></div>
+            
+              <button class="button"  (click)="validateColorEntered()"> <i class="material-icons">
+                check_circle_outline</i> </button> 
+            
+        </div>
+        
+        
+        <mat-dialog-actions>
+            <button class="mat-raised-button"(click)="close()">Annuler</button>
+            <button class="mat-raised-button mat-primary" (click)="save()">Créer</button>
+        </mat-dialog-actions>
+        
+    </form>
+</div>

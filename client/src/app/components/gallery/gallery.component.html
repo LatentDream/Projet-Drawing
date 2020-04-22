@@ -1,0 +1,47 @@
+<!-- Page title and button -->
+<div class="tittleBar_div">
+    <div class="tittleBar_left">
+        <h1 class="title"> <font face="verdana" size="+3">  Gallery </font> </h1> 
+    </div> 
+    <div class="tittleBar_right_more" (click)="backPage()"> 
+        <p class="tittleBar_more"> <i class="material-icons md-light md-48"> arrow_back </i></p>
+    </div>
+</div>
+
+<div class="main"> 
+
+    <!-- Container for the drawings -->
+    <div *ngIf="loading" id="serverLoading">
+        <mat-spinner></mat-spinner>
+        <p id="drawingLoading"> Loading drawing ... </p> 
+    </div>
+    <div id="drawingContainer">
+        <div *ngFor="let drawingData of drawingsData" class="flexItem">
+            <app-drawing [(info)]="drawingData"></app-drawing> 
+        </div>
+    </div>
+
+    <!-- Search option -->
+    <div id="rightsidenav">   
+        
+        <div id="search">
+            <h2 id="searchtitle"> Recherche </h2> 
+            <mat-form-field class="tags-list">
+                <mat-chip-list #chipList aria-label="Tag selection">
+                <mat-chip *ngFor="let tag of tags" [selectable]="true"
+                        [removable]="true" (removed)="remove(tag)">
+                    {{tag.name}}
+                    <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                </mat-chip>
+                <input class='input' placeholder="Étiquette"
+                        [matChipInputFor]="chipList"
+                        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                        [matChipInputAddOnBlur]="true"
+                        (matChipInputTokenEnd)="add($event)">
+                </mat-chip-list>
+            </mat-form-field>
+        </div>
+
+    </div>
+
+</div>

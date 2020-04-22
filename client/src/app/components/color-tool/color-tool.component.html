@@ -1,0 +1,115 @@
+<!--Part of div with primary and secondary colors-->
+<div class="typeCouleur">
+    Primaire: 
+    <div class="square" #primary [ngStyle]="{'background-color': colorService.primaryColor}" (click)="primaryColorClicked()"></div>
+        <!--Confirmation button and check mark icon-->
+            <button class="button" (click)="switchColors()"><i class="material-icons">
+              cached
+            </i></button>
+</div>
+
+<div class="typeCouleur">
+    Secondaire: 
+    <div class="square" #secondary [ngStyle]="{'background-color': colorService.secondaryColor}" (click)="secondaryColorClicked()"></div>
+</div>
+
+<div class="typeCouleur">
+  Background: 
+  <div class="square" #background [ngStyle]="{'background-color': colorService.backgroundColor}" (click)="backgroundColorClicked()"></div>
+  
+</div>
+
+
+  
+<!--Div pour regrouper les parti du color picker pour selectionner un couleur-->
+<div *ngIf="!colorVariables.hideColorPicker">
+
+  <!--Slider pour ajuster la transparence du couleur-->
+<div  style="margin-top: 10px">
+  <span style="font-size: 15px;">Transparence: </span>
+  <mat-slider #transparencySlider (change)="updateSliderValue($event)" thumbLabel value="100" min="1" max="100"></mat-slider>
+</div>
+  
+<!--Horizontal Color Slider
+    Picked is passed from slider to the color picker-->
+  <app-color-slider 
+  (color)="colorVariables.hue=$event"
+  (click)="colorVariables.togglePalette = false"
+  (click)="colorVariables.color = colorVariables.hue"
+  (click)="colorVariables.transparencyChanged = false"
+  (click)="saveColor()"
+></app-color-slider>
+
+<!--Colorpicker received the hue from the color slider and the user chooses
+   the exact color on this component-->
+<app-color-picker class="paletteRef" #palette [hue]="colorVariables.hue" (color)="colorVariables.color = $event"
+(click)="colorVariables.transparencyChanged = false" (click)="saveColor()" (click)="colorVariables.hideColorPicker = true"></app-color-picker>
+
+
+<div class="input-wrapper">
+    <div
+      class="color-div"
+      [ngStyle]="{'background-color': colorVariables.color || 'white'}"
+    ></div>
+
+      <div> R <input type="text" id ='valRHex' #valRHex maxlength="2" minlength="2"></div>
+      <div> G <input type="text" id ='valGHex' #valGHex maxlength="2" minlength="2"></div>
+      <div> B <input type="text" id ='valBHex' #valBHex maxlength="2" minlength="2"></div>
+      
+      <button class="button" (click)="validateColorEntered()"> <i class="material-icons">
+        check_circle_outline</i> </button> 
+
+</div>
+    
+</div>    
+
+  
+
+  <!--Div with Dots showing history of colors used in the design-->
+<div class= "color-history-dots" (contextmenu)="colorClickedInHistory($event,1)">
+    Dernières couleurs:
+    <div style="text-align:center">
+  
+    <!--
+      <span *ngfor="let number of array" class="dot" [ngStyle]="{'background-color': colorService.queue.data[{{number}}]}" 
+      (click)="colorClickedInHistory($event,{{number}})" (contextmenu)="colorClickedInHistory($event,{{number}})"> </span>
+    -->
+
+        <span class="dot" id="dot1" [ngStyle]="{'background-color': colorService.queue.data[0]}" 
+          (click)="colorClickedInHistory($event,0)" (contextmenu)="colorRightClickedInHistory($event,0)"
+        ></span>
+
+        <span class="dot" id="dot2" [ngStyle]="{'background-color': colorService.queue.data[1]}" 
+          (click)="colorClickedInHistory($event,1)" (contextmenu)="colorRightClickedInHistory($event,1)"
+        ></span>
+
+        <span class="dot" id="dot3" [ngStyle]="{'background-color': colorService.queue.data[2]}"  
+          (click)="colorClickedInHistory($event,2)" (contextmenu)="colorRightClickedInHistory($event,2)"
+        ></span>
+
+        <span class="dot" id="dot4" [ngStyle]="{'background-color': colorService.queue.data[3]}"  
+        (click)="colorClickedInHistory($event,3)" (contextmenu)="colorRightClickedInHistory($event,3)"></span>
+        
+        <span class="dot" id="dot5" [ngStyle]="{'background-color': colorService.queue.data[4]}"  
+        (click)="colorClickedInHistory($event,4)" (contextmenu)="colorRightClickedInHistory($event,4)"></span>
+  </div>
+
+  <div style="text-align:center">
+    
+    <span class="dot" id="dot6" [ngStyle]="{'background-color': colorService.queue.data[5]}"  
+    (click)="colorClickedInHistory($event,5)" (contextmenu)="colorRightClickedInHistory($event,5)"></span>
+
+    <span class="dot" id="dot7" [ngStyle]="{'background-color': colorService.queue.data[6]}"  
+    (click)="colorClickedInHistory($event,6)" (contextmenu)="colorRightClickedInHistory($event,6)"></span>
+
+    <span class="dot" id="dot8" [ngStyle]="{'background-color': colorService.queue.data[7]}"  
+    (click)="colorClickedInHistory($event,7)" (contextmenu)="colorRightClickedInHistory($event,7)"></span>
+
+    <span class="dot" id="dot9" [ngStyle]="{'background-color': colorService.queue.data[8]}"  
+    (click)="colorClickedInHistory($event,8)" (contextmenu)="colorRightClickedInHistory($event,8)"></span>
+
+    <span class="dot" id="dot10"[ngStyle]="{'background-color': colorService.queue.data[9]}"  
+    (click)="colorClickedInHistory($event,9)" (contextmenu)="colorRightClickedInHistory($event,9)"></span>
+  </div>
+
+</div>

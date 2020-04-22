@@ -1,0 +1,89 @@
+<div class="tittleBar_div">
+    <div class="tittleBar_left">
+        <h1 class="title"> <font face="verdana" size="+3"> Guide d'utilisation </font> </h1> 
+    </div> 
+    <div class="tittleBar_right_more" (click)="backPage()"> 
+        <p class="tittleBar_more"> <i class="material-icons md-light md-48"> arrow_back </i></p>
+    </div>
+</div>
+
+<mat-sidenav-container class="info-container" >
+    <!-- Side Naviagtion -->
+    <mat-sidenav class="sideNavDiv" mode="side" opened>
+        <!-- Button in the side nav -->
+        <mat-button-toggle-group 
+        [(ngModel)]="buttonToggleValue" class="sideNavButton-container" vertical="true" value="buttonToggleValue"
+        (change)="selectedCategory($event)">
+
+            <!-- Welcome Page -->
+            <mat-button-toggle class="sideNavButton" title="Welcome" value="welcome"
+                (click)="showInfo('welcome', generalSubject)" >
+                <p> Bienvenue </p>
+            </mat-button-toggle>
+
+            <!-- Tools -->
+            <mat-button-toggle class="sideNavButton" title="Tools" value="tools">
+                <p class="category"> Outils </p>
+                
+                <!-- Tools list button toggle -->
+                <mat-button-toggle-group *ngIf="showTools" 
+                    [(ngModel)]="subButtonToggleValue" 
+                    class="subSideNavButton-container" vertical="true" value="subButtonToggleValue">
+                        
+                    <!-- Display all tools -->
+                        <mat-button-toggle *ngFor="let tool of toolsSubject;"
+                        (click)="showInfo(tool, toolsSubject)"
+                        class="sideNavButton" title="tool" value="tool">
+                            {{ tool }}
+                        </mat-button-toggle>
+
+                </mat-button-toggle-group>
+            </mat-button-toggle>
+
+            <!-- Options -->
+            <mat-button-toggle class="sideNavButton" title="Options" value="options">
+                <p class="category"> Options </p>
+                
+                <!-- Options list button toggle -->
+                <mat-button-toggle-group *ngIf="showOptions" 
+                    [(ngModel)]="subButtonToggleValue" 
+                    class="subSideNavButton-container" vertical="true" value="subButtonToggleValue">
+                        
+                    <!-- Display all tools -->
+                        <mat-button-toggle *ngFor="let option of optionsSubject;"
+                        (click)="showInfo(option, optionsSubject)"
+                        class="sideNavButton" title="option" value="option">
+                            {{ option }}
+                        </mat-button-toggle>
+
+                </mat-button-toggle-group>
+            </mat-button-toggle>
+
+        </mat-button-toggle-group>
+    </mat-sidenav>
+    
+    <!-- Main display -->
+    <mat-sidenav-content class="pageInfo" position="start">    
+       
+        <div class="descriptionPage">
+
+            <app-user-guide-description [selectedSubject]="subjectToDisplay"></app-user-guide-description>
+        
+            <div class="naviagitonButton" dir="ltr" >
+                <div *ngIf="subjectToDisplay != generalSubject[0]" class="precedentButton">
+                    <button mat-raised-button (click)="precedent()"> Précédent </button>
+                </div>
+            
+                <div *ngIf="subjectToDisplay != optionsSubject[optionsSubject.length - 1]" class="nextButton">
+                    <button mat-raised-button (click)="next()"> Suivant </button>
+                </div>
+            </div>
+
+        </div>
+
+    </mat-sidenav-content>
+    
+</mat-sidenav-container>
+
+
+

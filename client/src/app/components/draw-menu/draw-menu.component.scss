@@ -1,0 +1,67 @@
+//Maint container for the tools menu, also contains the attribute panels
+.menuContainer{
+  height:100%;
+}
+
+//Main attributes panel
+.attMenuContainer{
+  width:200px;
+}
+
+
+.toolButtonGroupContainerBottom{
+  position: absolute;
+  bottom:0;
+ 
+  
+}
+
+//Container for 
+.toolButtonGroupContainerTop{
+  position:relative;
+  top:0;
+  display:grid;
+  grid-template-rows: auto auto auto auto auto;
+  border:none;
+    background-color: rgba(33,150,243,1);
+
+}
+
+
+//Container for specific tool selection in the attribute panels
+.attButtonGroupContainerTop{
+  position:relative;
+  top:0;
+  display:grid;
+  grid-template-columns: auto auto auto ;
+  border:none;
+
+ 
+}
+.input-wrapper {
+  margin-top: 16px;
+  display: flex;
+  border-radius: 1px;
+  border: 1px solid rgb(220, 220, 220);
+  padding: 8px;
+  height: 32px;
+  justify-content: center;
+}
+
+//Container for individual buttons
+.buttonContainerSide{
+  background-color: rgba(33,150,243,1);
+}
+
+.white-icon {
+  color: white;
+}
+
+.side {
+  background-color: rgba(33,150,243,1);
+}
+
+.undoRedo {
+  color: white;
+}
+

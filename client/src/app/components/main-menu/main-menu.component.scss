@@ -1,0 +1,64 @@
+body{
+  background-color: rgb(246, 248, 245);
+  height:100vh;
+  width: 100vw;
+}
+.rectangle {
+  height: 40px;
+  background-color: rgb(246, 248, 245);
+}
+h2 {
+  font-family: Arial Narrow; 
+  font-weight: bolder; 
+  font-size: 125px;
+  color:rgba(33,150,243,1); 
+  margin-left: 50px;
+  margin-top: 0px;
+  margin-bottom: 30px;
+
+}
+
+.bouton {
+  margin-left: 60px;
+  height: 90%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  width: 90%;
+  background-color: rgb(246, 248, 245);
+}
+
+#option1 {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+#guide{
+  margin-top: 30px;
+}
+
+.flexItem{
+  width: 200px;
+  height: 320px;
+  margin-left: 80px;
+  padding: 0px 20px 0px 20px;
+  background-color: rgba(242, 242, 242, 1);
+  box-shadow: 1px 1px 3px #C6C6C6;
+}
+
+.canvasPreview {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: white;
+  width: 200px;
+  height: 200px;
+}
+
+.infoGuide{
+  padding: 20px 80px;
+  font-size: 25px;
+  box-shadow: 1px 1px 3px #C6C6C6;
+  border-radius: 25px;
+  background-color: rgb(255, 255, 255);
+}

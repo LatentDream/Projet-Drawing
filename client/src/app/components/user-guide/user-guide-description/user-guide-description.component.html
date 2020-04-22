@@ -1,0 +1,321 @@
+<div *ngIf='selectedSubject == "welcome"'>
+    <h1> Bienvenue </h1>
+    <p> Bienvenue, vous trouverez dans cette section le guide d'utilisation pour le Projet 2 de l'équipe 305!<br /><br /> Vous trouverez ici la
+        documentation pour tout connaître sur le fonctionnement de l'application.
+
+        La barre de navigation ci-contre vous permet d'explorer et d'apprendre comment utiliser de chaque outil et
+        pinceau sous l'onglet "Outils".
+
+        De plus, vous découvrirez d'autres fonctionnalités de l'application sous l'onglet "Options".
+
+        <br/><br/>Les boutons "Suivant" et "Précédent" vous permettent de naviguer dans le guide d'utilisation un
+        onglet à la fois.
+
+
+
+    </p>
+</div>
+
+<div *ngIf='selectedSubject == "Crayon"'>
+    <h1> Outil crayon </h1>
+    <p> Le crayon est l'outil de base. Il permet de faire des traits simples à pointe ronde sans texture particulière.
+
+        <br/><br/>Accédez au crayon avec la touche <span style="color: red;">C</span>.
+        <br/><br/>Grâce au panneau d'attribut du crayon à la gauche de la surface de dessin, vous pouvez :
+    </p>
+    <ul>
+        <li>Définir l'épaisseur du trait</li>
+        <li>Définir la couleur du trait avec la palette de couleur</li>
+        <li>Définir la couleur du trait en entrant une valeur hexadécimale</li>
+        <li>Définir la couleur du trait avec une des dernières couleurs utilisées</li>
+    </ul>
+    <p>
+        Pour dessiner, maintenez le bouton gauche de la souris enfoncé en la déplaçant sur le canevas. 
+        Le trait se termine lorsque vous relâchez le bouton de la souris ou lorsque votre curseur sort de la zone de dessin.
+    </p>
+</div>
+
+<div *ngIf='selectedSubject == "Pinceau"'>
+    <h1> Outil pinceau </h1>
+    <p> Le pinceau permet de faire des traits plus complexes avec des textures diverses.
+
+        <br/><br/>Accédez au pinceau avec la touche <span style="color: red;">W</span>.
+        <br/><br/>Grâce au panneau d'attribut du pinceau à la gauche de la surface de dessin, vous pouvez :
+    </p>
+    <ul>
+        <li>Définir l'épaisseur du trait</li>
+        <li>Choisir la texture à utiliser</li>
+        <li>Définir la couleur du trait avec la palette de couleur</li>
+        <li>Définir la couleur du trait en entrant une valeur hexadécimale</li>
+        <li>Définir la couleur du trait avec une des dernières couleurs utilisées</li>
+    </ul>
+    <p>
+        Pour dessiner, maintenez le bouton gauche de la souris enfoncé en la déplaçant sur le canevas. 
+        Le trait se termine lorsque vous relâchez le bouton de la souris ou lorsque votre curseur sort de la zone de dessin.
+    </p>
+</div>
+
+<div *ngIf='selectedSubject == "Ligne"'>
+    <h1> Outil ligne </h1>
+    <p> L'outil de ligne permet de faire des lignes composées de plusieurs segments droits reliés.
+
+        <br/><br/>Accédez à l'outil de ligne avec la touche <span style="color: red;">L</span>.
+        <br/><br/>Grâce au panneau d'attribut de l'outil de ligne à la gauche de la surface de dessin, vous pouvez :
+    </p>
+    <ul>
+        <li>Définir l'épaisseur du trait</li>
+        <li>Coisir le type de jonction</li>
+        <li>Définir la couleur du trait avec la palette de couleur</li>
+        <li>Définir la couleur du trait en entrant un valeur hexadécimale</li>
+        <li>Définir la couleur du trait avec une des dernières couleurs utilisées</li>
+    </ul>
+    <p>
+        Pour dessiner, appuyez sur le bouton gauche de la souris une première fois sur le canevas pour débuter le segment.
+        On ajoute un segment à la ligne en appuyant ailleurs sur le canevas. 
+        Il est possible de forcer le segment à adopter un angle (multiple de 45 degrés) en gardant la touche <span style="color:red">SHIFT</span> enfoncée.
+        En appuyant près du point de départ du premier segment de la ligne, cela joint le segment sur ce point et ferme la ligne.
+        <br><br>
+        On peut annuler le dernier segment avec la touche <span style="color:red">BACKSPACE</span>  et annuler la ligne au complet avec la touche <span style="color:red">ESCAPE</span>.
+        Le trait se termine lorsque vous appuyez deux fois rapidement sur le bouton de la souris ou lorsque vous fermez la ligne.
+    </p>
+</div>
+
+<div *ngIf='selectedSubject == "Aérosol"'>
+    <h1> Outil aérosol</h1>
+    <p> Le aérosol permet de simuler un jet de peinture vaporisé à des intervals réguliers.
+
+        <br/><br/>Accédez a l'aérosol avec la touche <span style="color: red;">A</span>.
+        <br/><br/>Grâce au panneau d'attribut de l'aérosol à la gauche de la surface de dessin, vous pouvez :
+    </p>
+    <ul>
+        <li>Définir l'épaisseur du trait</li>
+        <li>Définir la fréquence d'émission de points</li>
+        <li>Définir la couleur du trait avec la palette de couleur</li>
+        <li>Définir la couleur du trait en entrant une valeur hexadécimale</li>
+        <li>Définir la couleur du trait avec une des dernières couleurs utilisées</li>
+    </ul>
+    <p>
+        Pour dessiner, maintenez le bouton gauche de la souris enfoncé en la déplaçant sur le canevas. 
+        Le trait se termine lorsque vous relâchez le bouton de la souris ou lorsque votre curseur sort de la zone de dessin.
+    </p>
+</div>
+
+<div *ngIf='selectedSubject == "Rectangle"'>
+    <h1> Outil rectangle </h1>
+    <p> L'outil de rectangle permet de faire des rectangles librement sur le canevas.
+
+        <br/><br/>Accédez à l'outil rectangle avec la touche <span style="color: red;">1</span>.
+        <br/><br/>Grâce au panneau d'attribut de l'outil de rectangle à gauche de la surface de dessin, vous pouvez :
+    </p>
+    <ul>
+        <li>Définir l'épaisseur du contour</li>
+        <li>Choisir de type de tracé de la forme</li>
+        <li>Définir la couleur de l'intérieur (primaire) ou du contour (secondaire) de la forme avec la palette de couleur</li>
+        <li>Définir la couleur de l'intérieur (primaire) ou du contour (secondaire) de la forme en entrant une valeur hexadécimale</li>
+        <li>Définir la couleur de l'intérieur (primaire) ou du contour (secondaire) de la forme avec une des dernières couleurs utilisées</li>
+    </ul>
+    <p>
+        Pour dessiner, maintenez le bouton gauche de la souris enfoncé en la déplaçant sur le canevas pour former un rectangle de la grandeur voulue.
+        En gardant la touche <span style="color: red;">SHIFT</span> enfoncée, on peut focrer les côtés du rectangle à être de même longeur pour former un carré.
+        <br><br> En relâchant le bouton, le rectangle s'imprime sur la surface. La forme se termine également en soratn le curseur de la surface de dessin.  
+    </p>
+</div>
+
+<div *ngIf='selectedSubject == "Ellipse"'>
+    <h1> Outil ellipse </h1>
+    <p> L'outil de ellipse permet de faire des ellipses librement sur le canevas.
+
+        <br/><br/>Accédez à l'outil ellipse avec la touche <span style="color: red;">2</span>.
+        <br/><br/>Grâce au panneau d'attribut de l'outil de ellipse à gauche de la surface de dessin, vous pouvez :
+    </p>
+    <ul>
+        <li>Définir l'épaisseur du contour</li>
+        <li>Choisir de type de tracé de la forme</li>
+        <li>Définir la couleur de l'intérieur (primaire) ou du contour (secondaire) de la forme avec la palette de couleur</li>
+        <li>Définir la couleur de l'intérieur (primaire) ou du contour (secondaire) de la forme en entrant une valeur hexadécimale</li>
+        <li>Définir la couleur de l'intérieur (primaire) ou du contour (secondaire) de la forme avec une des dernières couleurs utilisées</li>
+    </ul>
+    <p>
+        Pour dessiner, maintenez le bouton gauche de la souris enfoncé en la déplaçant sur le canevas pour former une ellipse de la grandeur voulue.
+        En gardant la touche <span style="color: red;">SHIFT</span> enfoncée, on peut focrer la formation d'un cercle.
+        <br><br> En relâchant le bouton, l'ellipse s'imprime sur la surface. La forme se termine également en sortant le curseur de la surface de dessin.  
+    </p>
+</div>
+
+<div *ngIf='selectedSubject == "Polygone"'>
+    <h1> Outil polygone </h1>
+    <p> L'outil de polygone permet de faire des polygones librement sur le canevas.
+
+        <br/><br/>Accédez à l'outil polygone avec la touche <span style="color: red;">3</span>.
+        <br/><br/>Grâce au panneau d'attribut de l'outil de polygone à gauche de la surface de dessin, vous pouvez :
+    </p>
+    <ul>
+        <li>Définir le nombre de côtés</li>
+        <li>Définir l'épaisseur du contour</li>
+        <li>Choisir de type de tracé de la forme</li>
+        <li>Définir la couleur de l'intérieur (primaire) ou du contour (secondaire) de la forme avec la palette de couleur</li>
+        <li>Définir la couleur de l'intérieur (primaire) ou du contour (secondaire) de la forme en entrant une valeur hexadécimale</li>
+        <li>Définir la couleur de l'intérieur (primaire) ou du contour (secondaire) de la forme avec une des dernières couleurs utilisées</li>
+    </ul>
+    <p>
+        Pour dessiner, maintenez le bouton gauche de la souris enfoncé en la déplaçant sur le canevas pour former un polygone de la grandeur voulue.
+        Les polygones dessinés sont réguliers (équiangulaire et équilatéral) et convexes.
+        <br><br> En relâchant le bouton, l'polygone s'imprime sur la surface. La forme se termine également en sortant le curseur de la surface de dessin.  
+    </p>
+</div>
+
+<div *ngIf='selectedSubject == "Sceau de peinture"'>
+    <h1> Outil sceau de peinture </h1>
+    <p> L'outil sceau de peinture permet de remplir une région de la couleur principale en cliquant dessus.
+        <br/><br/>Accédez à l'outil sceau de peinture avec la touche <span style="color: red;">B</span>.
+    </p>
+    <ul>
+        <li>Après l'utilisation de l'outil, un nouvel objet de la couleur principale est créé pour masquer la région à remplir.</li>
+        <li>La tolérance d'écart de couleur (en pourcentage) peut être définie pour le remplissage. La tolérance d'écart permet de définir si une région doit être remplie en fonction de sa couleur.</li>
+    </ul>
+</div>
+
+<div *ngIf='selectedSubject == "Pipette"'>
+    <h1> Outil pipette </h1>
+    <p> Vous pouvez choisir une couleur en utilisant l'outil pipette.
+        <br/><br/>Accédez à l'outil pipette avec la touche <span style="color: red;">I</span>.
+    </p>
+    <ul>
+        <li>La couleur saisie est celle du pixel sous le pointeur de la souris.</li>
+        <li>La couleur saisie est assignée à la couleur principale avec un clic gauche ou a la couleur secondaire avec un clic droit.</li>
+    </ul>
+    
+</div>
+
+<div *ngIf='selectedSubject == "Applicateur de couleur"'>
+    <h1> Outil applicateur de couleur </h1>
+    <p> L'outil applicateur de couleur permet de changer la couleur d'un objet déjà dessiné en cliquant dessus.
+        <br/><br/>Accédez à l'outil applicateur de couleur avec la touche <span style="color: red;">R</span>.
+    </p>
+    <ul>
+        <li>Un clic avec le bouton gauche sur un objet fera changer sa couleur pour la couleur principale.</li>
+        <li>Un clic avec le bouton droit sur un objet fera changer la couleur de bordure, s’il en a une, pour la couleur secondaire.</li>
+    </ul>
+</div>
+
+<div *ngIf='selectedSubject == "Sélection"'>
+    <h1> Outil sélection </h1>
+    <p> L'outil de sélection permet de sélectionner des objets sur le canevas.
+        <br/><br/>Accédez à l'outil sélection avec la touche <span style="color: red;">S</span>.
+        <br/><br/>Grâce à l'outil sélection, vous pouvez :
+    </p>
+    <ul>
+        <li>Sélectionner un objet en faisant un clic gauche simple</li>
+        <li>Sélectionner une ou plusieurs formes à l'aide d'un glisser-déposer (les formes sélectionnées sont celles à l'intérieur du rectangle de sélection lorsque le bouton gauche de la souris est relaché)</li>
+        <li>Désélectionner un objet en faisant un clic droit simple</li>
+        <li>Désélectionner une ou plusieurs formes à l'aide d'un glisser-déposer (les fomes désélectionnées sont celles à l'intérieur du rectangle de désélection lorsque le bouton droit de la souris est relaché)</li>
+        <li>Visualiser la sélection courante à l'aide d'une boîte englobante identifiant les objets sélectionnés</li>
+    </ul>
+    <p> Il est aussi possible de modifier le contenu de la sélection des manières suivantes:</p>
+    <ul>
+        <li> Déplacer la sélection courante à l'aide de la souris en faisant un glisser-déposer avec le bouton de gauche.</li>
+        <li> Déplacer la sélection courante à l'aide des flèches du clavier.</li>
+        <li> Faire rotater la sélection courante de 15 degrés à la fois par rapport au centre de celle-ci à l'aide de la roulette de la souris. La touche
+            <span style="color: red;">ALT</span> permet de porter le degré de rotation à 1 et la touche <span style="color: red;">SHIFT</span> permet de faire rotater chaque élément de la sélection selon son centre respectif.</li>
+    </ul>
+    <p>
+        En relâchant le bouton, le polygone s'imprime sur la surface. La forme se termine également en sortant le curseur de la surface de dessin. <br>
+        On peut aussi se servir du Presse-Papier pour copier et coller une selection et autre fonctionnalités à l'aide des commandes suivantes :
+    </p>
+    <ul>
+        <li>Copier la selection au Presse-Papier avec <span style="color: red;">CTRL + C</span></li>
+        <li>Coller la selection du Presse-Papier au canvas avec <span style="color: red;">CTRL + V</span></li>
+        <li>Dupliquer la selection à l'aide Presse-Papier avec <span style="color: red;">CTRL + D</span></li>
+        <li>Couper la selection et la copier au Presse-Papier avec <span style="color: red;">CTRL + X</span></li>
+        <li>Supprimer la selection au Presse-Papier avec <span style="color: red;">DELETE</span></li>
+    </ul>
+</div>
+
+<div *ngIf='selectedSubject == "Grille"'>
+    <h1> Outil grille </h1>
+    <p> L'outil grille vous permet d'afficher une grille sur la surface de dessin. 
+        <br/><br/>Accédez à l'outil grille avec la touche <span style="color: red;">G</span>. Il es possible de:
+    </p>
+    <ul>
+        <li>Définir la grille comme étant activée ou désactivée</li>
+        <li>De définir la taille des carrés de la grille</li>
+        <li>De définir la transparence de la grille</li>
+    </ul>
+</div>
+
+<div *ngIf='selectedSubject == "Efface"'>
+    <h1> Outil efface </h1>
+    <p> L'outil efface permet d'effacer des objets de la surface de dessin avec un clic du bouton gauche ou un glisser-déposer.
+        <br/>Accédez à l'outil efface avec la touche <span style="color: red;">E</span>. <br/>Il es possible de:
+    </p>
+    <ul>
+        <li>Définir la taille de l'efface.</li>
+        <li>Didentifier l'objet qui sera supprimé lors du prochain clic grâce à son contour rouge</li>
+    </ul>
+</div>
+
+<div *ngIf='selectedSubject == "Créer un dessin"'>
+    <h1> Créer un nouveau dessin </h1>
+    <p> Dans le menu de la vue de dessin, on retrouve l'option "Créer un nouveau dessin". Cette dernière permet de générer un nouvel espace de dessin vierge pour débuter une nouvelle oeuvre.
+        <br><br>Vous pouvez choisir hauteur et la largeur du canvas au moment de créer un nouveau dessin.
+        <br/><br/>Accédez à l'option de création d'un dessin avec <span style="color: red;">Ctrl + O</span>.
+        Il est également possible de choisir la couleur de fond soit avec la palette de couleur ou en entrant des valeurs hexadécimales.
+        Une fois que les paramètres voulus ont étés entrés, le bouton "Créer" génère la zone de dessin.
+    </p>
+</div>
+
+<div *ngIf='selectedSubject == "Exporter un dessin"'>
+    <h1> Exporter un dessin </h1>
+    <p> Dans le menu de la vue de dessin, on retrouve l'option "Exporter un dessin". Vous pouvez exporter votre oeuvre en format JPG, PNG ou SVG. 
+        Vous avez l'option de la sauvegarder sur votre ordinateur ou de l'envoyer par courriel.
+        <br/><br/>Accédez à l'option d'exportation avec <span style="color: red;">Ctrl + E</span>.
+        <br><br>Si vous l'exportez sur votre ordinateur, il est nécessaire d'entrer le nom du fichier avant l'exportation.
+        <br>Si vous l'envoyez par courriel, vous devez entrer le nom de l'auteur et l'adresse courriel du destinataire avant de l'envoyer.
+        <br><br>Dans tous les cas, il est possible d'appliquer un filtre sur l'image avant de l'exporter.
+        <br><br>Pour confirmer l'exportation, appuyez sur "Confirmer".
+    </p>
+</div>
+
+<div *ngIf='selectedSubject == "Galerie"'>
+    <h1> Galerie </h1>
+    <p> Dans le menu de la vue de dessin, on retrouve l'option "Galerie". La Galerie de dessin vous permet de visualiser les dessins d'autres personnes et ceux que vous avez sauvegardés. 
+        <br><br>Il est possible de filtrer les dessins en fonction de leurs étiquettes.
+        <br><br>En sélectionant un dessin, vous pouvez ensuite le charger de la Galerie vers votre canevas grâce à l'option "Ouvrir". 
+        Puisque tous les dessins sauvegardés sont publics, on peut également en supprimer avec l'option "Supprimer".</p>
+</div>
+
+<div *ngIf='selectedSubject == "Sauvegarder"'>
+    <h1> Sauvegarder </h1>
+    <p> Dans le menu de la vue de dessin, on retrouve l'option "Sauvegarder".
+        <br/><br/>Accédez à l'option de sauvegarde avec <span style="color: red;">Ctrl + S</span>. 
+        Vous pouvez sauvegarder votre dessin dans la Galerie, ce qui permet à tout autre utilisateur de le visionner, modifier ou supprimer. 
+        <br><br>Pour effectuer la sauvegarde, vous devez entrer le nom de votre oeuvre et lui associer un ou plusieurs étiquettes pour permettre au mode de la retrouver plus facilement.
+        Il est important de respecter les règles de validation sinon le dessin ne sera pas sauvegardé.
+    </p>
+</div>
+
+<div *ngIf='selectedSubject == "Écrire un texte"'>
+    <h1> Outil texte </h1>
+    <p> L'outil de ligne permet d'écrire du texte.
+
+        <br/><br/>Accédez à l'outil de ligne avec la touche <span style="color: red;">T</span>.
+        <br/><br/>Grâce au panneau d'attribut de l'outil texte à la gauche de la surface de dessin, vous pouvez :
+    </p>
+    <ul>
+        <li>Définir la police du texte</li>
+        <li>Définir la taille de la police</li>
+        <li>Définir la couleur des mots avec la palette de couleur</li>
+        <li>Mettre la chaîne de charactère en gras ou en italique</li>
+        <li>Modifier l'alignement du texte</li>
+    </ul>
+    <p>
+        Pour écrire, appuyez sur le bouton gauche de la souris une première fois sur le canevas pour débuter le texte. 
+        Il est possible de changer de ligne avec la touche <span style="color:red">ENTER</span>, de supprimer un caractère avec 
+        la touche <span style="color:red">BACKSPACE</span>
+        et supprimer le caractère suivant avec la touche <span style="color:red">DELETE</span>.
+        Il est possible de se déplacer dans le texte à l'aide des <span style="color:red">FLÈCHES</span>
+        <br><br>
+        On peut annuler la création de texte avec la touche <span style="color:red">ESCAPE</span>.
+        Le texte se termine quand on sélectionne un autre outil, clique sur le canvas ou hors du canvas.
+    </p>
+</div>

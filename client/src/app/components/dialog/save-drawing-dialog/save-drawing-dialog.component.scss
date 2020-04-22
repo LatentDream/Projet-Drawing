@@ -1,0 +1,40 @@
+.example-chip-list {
+    width: 100%;
+  }
+
+.canvasPreview {
+  margin-top: 20px;
+  background-color: white;
+  width: 200px;
+  height: 200px;
+}
+
+.preview {
+  background-color: white;
+  width: 200px;
+  height: 320px;
+  padding: 0px 20px 0px 20px;
+  margin: 30px;
+  background-color: rgba(242, 242, 242, 1);
+  box-shadow: 1px 1px 3px #C6C6C6;
+}
+
+.container {
+  display: flex;
+}
+.leftDiv {
+  width: 200px;
+}
+.rightDiv {
+  flex-grow: 1;
+}
+
+.grosX {
+  line-height : 12px;
+  width : 18px;
+  margin-top : 10px;
+  margin-right : 50px;
+  position : absolute;
+  top : 21%;
+  right : 33%;
+}

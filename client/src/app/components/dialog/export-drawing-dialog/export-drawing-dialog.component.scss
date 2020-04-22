@@ -1,0 +1,50 @@
+mat-radio-button {
+    margin: 2px;
+    display: block;
+}
+
+label{
+    display: block;
+    padding-bottom: 10px;
+}
+
+.canvasPreview {
+  margin-top: 20px;
+  background-color: white;
+  width: 200px;
+  height: 200px;
+}
+
+.preview {
+  width: 200px;
+  height: 300px;
+  padding: 0px 20px 0px 20px;
+  margin: 30px;
+  background-color: rgba(242, 242, 242, 1);
+  box-shadow: 1px 1px 3px #C6C6C6;
+}
+.mail-container {
+  width: 200px;
+  height: 60px;
+  padding: 10px 20px 10px 20px;
+  margin: 30px;
+  background-color: rgba(242, 242, 242, 1);
+  box-shadow: 1px 1px 3px #C6C6C6;
+}
+
+mat-label {
+  top: 10px;
+}
+
+.container {
+  display: flex;
+}
+
+.leftDiv {
+  width: 200px;
+}
+
+.rightDiv {
+  flex-grow: 1;
+}
+

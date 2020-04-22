@@ -1,0 +1,25 @@
+
+<div style="margin-left: 5px">
+    <p><b>Outil ligne</b></p>
+    <p>Épaisseur du trait</p>
+    <mat-slider (change)="updateSliderValueLine($event)" thumbLabel [displayWith]="formatLabel" min="1" max="50" value="3"></mat-slider>
+
+    <div class="connector">
+        <div style="font-size:medium ; margin-left: 5px; margin-top: 10px;">Type de jonction :</div>
+        <mat-radio-group style="margin-left: 5px;" (change)="updateConnectorsType($event)" >
+            <mat-radio-button value="jonction" [disabled]="lineService.lineParams.rendering">Points</mat-radio-button>
+            <mat-radio-button value="aucune" checked="checked" style="margin-left: 5px" [disabled]="lineService.lineParams.rendering">Aucune</mat-radio-button>
+        </mat-radio-group>
+    </div>
+
+    <div *ngIf="show" style="margin-left: 5px">
+        <p>Épaisseur de la jonction</p>
+        <mat-slider (change)="updateSliderValueConnectors($event)" thumbLabel [displayWith]="formatLabel" min="1" max="50" value="5" [disabled]="lineService.lineParams.rendering"></mat-slider>
+    </div>
+</div>
+
+<!-- ColorPicker -->
+<div style="margin-left: 5px">
+    <p><b>Palette de couleur</b></p>
+    <app-color-tool></app-color-tool>
+</div>

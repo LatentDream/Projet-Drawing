@@ -1,0 +1,67 @@
+
+<div class="container">  
+  <div class="leftDiv">
+        <h3 mat-dialog-title>Exporter le dessin courant</h3>
+        <form>
+
+            <label class="fomat"> Méthode d'export : 
+                <mat-radio-group aria-labelledby="export-radio-group-label" class="export-radio-group">
+                    <mat-radio-button (click)="att.exportMethode = 'download';" class="example-radio-button" value="download" checked="checked"> Téléchargement </mat-radio-button>
+                    <mat-radio-button (click)="att.exportMethode = 'email';" class="example-radio-button" value="mail"> Couriel </mat-radio-button>
+                </mat-radio-group>
+            </label>
+
+            <label>
+                Format:
+                <mat-radio-group class="fomat">
+                    <mat-radio-button (click)="att.format = 'svg'" value="svg" checked="checked">SVG</mat-radio-button>
+                    <mat-radio-button (click)="att.format = 'jpg'" value="jpg">JPG</mat-radio-button>
+                    <mat-radio-button (click)="att.format = 'png'" value="png">PNG</mat-radio-button>
+                </mat-radio-group>
+            </label>
+
+            <label>
+                Filtre:
+                <mat-radio-group class="fomat">
+                    <mat-radio-button (click)="att.filter = 'blur(0px)';appliedFilter('blur(0px)')" value="na" checked="checked">Aucun filtre</mat-radio-button>
+                    <mat-radio-button (click)="att.filter = 'blur(3px)';appliedFilter('blur(3px)')" value="f1">Flou</mat-radio-button>
+                    <mat-radio-button (click)="att.filter = 'brightness(0.4)';appliedFilter('brightness(0.4)')" value="f2">Dark Mode</mat-radio-button>
+                    <mat-radio-button (click)="att.filter = 'invert(100%)';appliedFilter('invert(100%)')" value="f3">Invertion </mat-radio-button>
+                    <mat-radio-button (click)="att.filter = 'grayscale(100%)';appliedFilter('grayscale(100%)')" value="f4">Grisaliser</mat-radio-button>
+                    <mat-radio-button (click)="att.filter = 'hue-rotate(90deg)';appliedFilter('hue-rotate(90deg)')" value="f5">Augmentation</mat-radio-button>
+                </mat-radio-group>
+            </label>
+            
+        </form>
+    </div>
+
+    <div class="rightDiv"> 
+        <!-- Container the drawing -->
+        <div class="preview">
+            <canvas #svgConainter class="canvasPreview">
+            </canvas>
+            <!-- Name input -->
+            <label>
+                <mat-form-field appearance="fill">
+                    <mat-label>Nom: </mat-label>
+                    <input matInput [(ngModel)]="att.drawingName" name="savedDrawingName" >
+                  </mat-form-field>
+            </label>
+        </div>
+        <!-- Email input -->
+        <div class="mail-container" *ngIf="att.exportMethode === 'email'">
+            <mat-form-field appearance="fill" class="emailInput">
+              <mat-label>Enter your email</mat-label>
+              <input matInput [(ngModel)]="att.email" placeholder="ex@example.com" >
+            </mat-form-field>
+        </div>
+        <!-- Dialog button -->
+        <div class="button">
+            <mat-dialog-actions class="button">
+                <button class="mat-raised-button"(click)="close()">Annuler</button>
+                <button class="mat-raised-button mat-primary" (click)="save()">Exporter</button>
+            </mat-dialog-actions>
+        </div>
+    </div>
+
+</div>

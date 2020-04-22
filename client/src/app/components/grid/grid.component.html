@@ -1,0 +1,11 @@
+
+    <!--Code inspired from https://codepen.io/pigabo/pen/eAiLF-->
+    <svg *ngIf="gridService.gridIsActive" class="grid" xmlns="http://www.w3.org/2000/svg" >
+        <defs>
+            <pattern id="grid" [attr.width.px]="gridService.scale" [attr.height.px]="gridService.scale" patternUnits="userSpaceOnUse">
+                <path [attr.opacity]="gridService.opacity" [attr.d]="gridService.path" fill="none" stroke="grey" stroke-width="2">
+                </path>
+            </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid)"></rect>
+    </svg>

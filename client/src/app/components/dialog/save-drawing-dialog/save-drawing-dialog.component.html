@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="leftDiv"  *ngIf="loading==false">
+        <h3 mat-dialog-title>Exporter le dessin courant</h3>
+        <form>
+            <label>
+                Nom du dessin:
+                <input matInput [(ngModel)]="drawingName" name="savedDrawingName">
+
+            </label><br>
+            <p>Vous pouvez ajotuer une ou plusieurs étiquettes au dessin courant.<br><br>(Longueur minimum de 1 et maximale de 20. N'utilisez que les caractères 'a-Z', '1-9' ou '_')</p>
+
+            <mat-form-field class="example-chip-list">
+                <mat-chip-list #chipList aria-label="Tag selection">
+                <mat-chip *ngFor="let tag of tags" [selectable]="true"
+                        [removable]="true" (removed)="remove(tag)">
+                    {{tag.name}}
+                    <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                </mat-chip>
+                <input class="input" placeholder="Nouvelle étiquette..."
+                        [matChipInputFor]="chipList"
+                        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                        [matChipInputAddOnBlur]="true"
+                        (matChipInputTokenEnd)="add($event)">
+                </mat-chip-list>
+            </mat-form-field>
+
+        </form>
+    </div>
+
+    <div class="rightDiv"> 
+
+        <!-- Container the drawing -->
+        <div class="preview">
+            <canvas #svgConainter class="canvasPreview"></canvas>
+            <h3> Nom : {{drawingName}} </h3>
+            <mat-chip-list #chipList aria-label="Tag selection" class="example-chip-list">
+            <mat-chip *ngFor="let tag of tags">
+                {{tag.name}}
+            </mat-chip>
+            </mat-chip-list>
+        </div>
+        <mat-dialog-actions>
+            <button class="mat-raised-button" (click)="close()">Annuler</button>
+            <button class="mat-raised-button mat-primary" (click)="save()">Sauvegarder</button>
+        </mat-dialog-actions>
+
+    </div>
+    
+</div>
+<div *ngIf="loading" id="serverLoading">
+    <mat-spinner></mat-spinner>
+    <p id="drawingLoading"> Loading drawing ... </p> 
+</div>

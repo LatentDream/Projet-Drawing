@@ -1,0 +1,84 @@
+<mat-button-toggle-group class="attButtonGroupContainerTop" (change)="toolChange($event)" value="{{clickEventDispatcher['currentTool']}}">
+
+    <!--Shape "Rectangle" tool-->
+    <mat-button-toggle class="buttonContainer" title="Rectangle" value="rectangle">
+        <mat-icon>
+            <!--Rectangle icon-->
+            <img src="https://img.icons8.com/material-sharp/24/000000/rectangle-stroked.png">
+        </mat-icon>
+    </mat-button-toggle>
+
+
+    <!--Shape "Ellipse" tool-->
+
+    <mat-button-toggle class="buttonContainer" title="Ellipse" value="ellipse">
+        <mat-icon>
+            <!--Ellipse icon-->
+            <img src="https://img.icons8.com/android/24/000000/ellipse-stroked.png">
+        </mat-icon>
+    </mat-button-toggle>
+
+
+    <!--Shape "Polygone" tool-->
+
+    <mat-button-toggle class="buttonContainer" title="Polygone" value="polygon">
+        <mat-icon>
+            <!--Polygone icon (pantagone)-->
+            <img src="https://img.icons8.com/metro/24/000000/pentagon.png">
+        </mat-icon>
+    </mat-button-toggle>
+
+</mat-button-toggle-group>
+
+<div *ngIf="clickEventDispatcher['currentTool'] === 'rectangle'" style="margin-left: 5px">
+    <p><b>Outil rectangle</b></p>
+</div>
+<div *ngIf="clickEventDispatcher['currentTool'] === 'ellipse'" style="margin-left: 5px">
+    <p><b>Outil ellipse</b></p>
+</div>
+<div *ngIf="clickEventDispatcher['currentTool'] === 'polygon'" style="margin-left: 5px">
+    <p><b>Outil polygone</b></p>
+</div>
+
+<div style="margin: 10px 0px">
+    <div style="margin-left: 5px">
+        <p>Épaisseur du contour</p>
+        <mat-slider class='strokeSlider' (change)="updateSliderValueShape($event)" thumbLabel min="0" max="50" value="10"></mat-slider>
+    </div>
+    <div style="margin-left: 5px">
+        <p>Type de forme</p>
+        <mat-radio-group class='shapeStyle' (change)="updateShapeType($event)">
+            <mat-radio-button style="margin-left: 5px" value="contour">Contour</mat-radio-button>
+            <mat-radio-button style="margin-left: 5px" value="filled">Plein</mat-radio-button>
+            <mat-radio-button style="margin-left: 5px" value="contourFilled" checked="checked">Contour + Plein</mat-radio-button>
+        </mat-radio-group>
+    </div>
+</div>
+
+<div *ngIf="clickEventDispatcher['currentTool'] === 'polygon'" style="margin-left: 10px">
+    <mat-form-field style="width: 150px;">
+        <mat-label>Nombre de côtés</mat-label>
+        <mat-select [(ngModel)]="selectedSide" (ngModelChange)="updateNumberSide()">
+            <mat-option value="3">3</mat-option>
+            <mat-option value="4">4</mat-option>
+            <mat-option value="5">5</mat-option>
+            <mat-option value="6">6</mat-option>
+            <mat-option value="7">7</mat-option>
+            <mat-option value="8">8</mat-option>
+            <mat-option value="9">9</mat-option>
+            <mat-option value="10">10</mat-option>
+            <mat-option value="11">11</mat-option>
+            <mat-option value="12">12</mat-option>
+            </mat-select>
+        </mat-form-field>
+        
+</div>
+
+
+<!-- ColorPicker -->
+<div style="margin-left: 5px">
+    <p><b>Palette de couleur</b></p>
+    <app-color-tool></app-color-tool>
+</div>
+
+ <!-- Ajouter un ng if avec un menu deroulant pour la taille des polygones -->

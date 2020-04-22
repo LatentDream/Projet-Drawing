@@ -1,0 +1,28 @@
+
+<div> 
+    <!-- Container the drawing -->
+    <div class="option">
+        <div class="upload">
+            <button mat-mini-fab color="primary" (click)="loadToDrawingZone()"  >
+                <i class="material-icons">
+                    create
+                    </i>
+            </button>
+        </div>
+        <div class="delete">
+            <button mat-mini-fab color="warn" (click)="delete()" >
+                X
+            </button>
+        </div>
+    </div>
+    <canvas #svgConainter class="canvasPreview">
+    </canvas>
+    <div id="png-container"></div>
+    <h3> {{info.name}} </h3>
+    <mat-chip-list #chipList aria-label="Tag selection" class="example-chip-list">
+        <mat-chip *ngFor="let tag of info.tags">
+        {{tag}}
+      </mat-chip>
+    </mat-chip-list>
+
+</div>

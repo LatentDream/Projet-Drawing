@@ -1,0 +1,55 @@
+<!--Color tool attributes toggle button group-->
+<mat-button-toggle-group class="attButtonGroupContainerTop"  (change)="toolChange($event)" value="{{clickEventDispatcher['currentTool']}}">
+
+
+        <!--Color bucket tool-->
+    
+        <mat-button-toggle class="buttonContainer" title="Sceau de remplissage" value="bucket">
+            <mat-icon>
+                <img src="https://img.icons8.com/android/24/000000/fill-color.png">
+            </mat-icon>
+        </mat-button-toggle>
+    
+    
+        <!--Color palette tool-->
+    
+        <mat-button-toggle class="buttonContainer" title="Applicateur de couleur" value = 'applicator'>
+            <mat-icon>
+                <img src="https://img.icons8.com/color/24/000000/rgb-circle-1--v1.png">
+            </mat-icon>
+        </mat-button-toggle>
+    
+        <!--Color picker tool-->
+    
+        <mat-button-toggle class="buttonContainer" title="Pipette" value="dropper">
+            <mat-icon>
+                <img src="https://img.icons8.com/metro/24/000000/color-dropper.png">
+            </mat-icon>
+        </mat-button-toggle>
+
+</mat-button-toggle-group>
+
+
+<!-- ColorPicker -->
+<div *ngIf="clickEventDispatcher['currentTool'] === 'applicator'" style="margin-left: 5px">
+    <p><b>Outil applicateur de couleur</b></p>
+    <p>(1) Cliquez sur une forme avec le bouton gauche pour appliquer la couleur primaire.</p>
+    <p>(2) Cliquez sur une forme avec le bouton droit pour appliquer la couleur secondaire.</p>
+</div>
+
+<div *ngIf="clickEventDispatcher['currentTool'] === 'dropper'" style="margin-left: 5px">
+    <p><b>Outil pipette</b></p>
+    <p>(1) Cliquez sur le canevas avec le bouton gauche pour remplacer la couleur primaire.</p>
+    <p>(2) Cliquez sur le canevas avec le bouton droit pour remplacer la couleur secondaire.</p>
+</div>
+
+<div *ngIf="clickEventDispatcher['currentTool'] === 'bucket'" style="margin-left: 5px">
+    <p><b>Outil sceau</b></p>
+    <p>Tolérance</p>
+    <mat-slider min="1" max="100" step="1" value="1" thumbLabel (change)="changeTolerance($event)"></mat-slider>
+</div>
+
+<div style="margin-left: 5px">
+    <p><b>Palette de couleur</b></p>
+    <app-color-tool></app-color-tool>
+</div>

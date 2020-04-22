@@ -1,0 +1,149 @@
+<!--Main container for the sidenav including toolbar and attribute's menu-->
+<mat-sidenav-container class="menuContainer" >
+
+    <!--Toolbar sidenav-->
+    <mat-sidenav class="side" mode="side" opened>
+
+        <!--Toggle group for the main tools at the top of the toolbar-->
+        <mat-button-toggle-group [(ngModel)]="buttonToggleValue" class="toolButtonGroupContainerTop" vertical="true" value="buttonToggleValue" (change)="toolChange($event)">
+            
+            <!-- Draw tools toggle button-->
+                <mat-button-toggle class="buttonContainerSide" title="Dessin" value="draw">
+                    <mat-icon class="white-icon">create</mat-icon>
+                </mat-button-toggle>
+
+            <!--Shape tools toggle button-->
+                <mat-button-toggle class="buttonContainerSide" title="Forme" value="shape">
+                    <mat-icon class="white-icon">
+                        <!--Shape icon-->
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                            width="24" height="24"
+                            viewBox="0 0 172 172"
+                            style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M41.28,10.32c-17.05219,0 -30.96,13.90781 -30.96,30.96c0,17.05219 13.90781,30.96 30.96,30.96c17.05219,0 30.96,-13.90781 30.96,-30.96c0,-17.05219 -13.90781,-30.96 -30.96,-30.96zM106.64,13.76c-1.89469,0 -3.44,1.54531 -3.44,3.44v48.16c0,1.89469 1.54531,3.44 3.44,3.44h48.16c1.89469,0 3.44,-1.54531 3.44,-3.44v-48.16c0,-1.89469 -1.54531,-3.44 -3.44,-3.44zM41.28,17.2c13.34344,0 24.08,10.73656 24.08,24.08c0,13.34344 -10.73656,24.08 -24.08,24.08c-13.34344,0 -24.08,-10.73656 -24.08,-24.08c0,-13.34344 10.73656,-24.08 24.08,-24.08zM110.08,20.64h41.28v41.28h-41.28zM113.72156,96.32c-1.51844,0 -2.84875,0.98094 -3.30563,2.41875l-10.49469,34.02375c-0.43,1.37063 0.04031,2.87563 1.1825,3.74906l27.52,21.02969c1.23625,0.94063 2.95625,0.94063 4.1925,0l27.52,-21.02969c1.14219,-0.87344 1.6125,-2.37844 1.1825,-3.74906l-10.49469,-34.02375c-0.45688,-1.43781 -1.78719,-2.41875 -3.30563,-2.41875zM41.11875,99.76c-1.1825,0.06719 -2.24406,0.71219 -2.83531,1.73344l-27.50656,48.16c-0.61813,1.06156 -0.60469,2.37844 0,3.44c0.61812,1.06156 1.76031,1.70656 2.98312,1.70656h55.04c1.22281,0 2.365,-0.645 2.98313,-1.70656c0.60469,-1.06156 0.61812,-2.37844 0.01344,-3.44l-27.52,-48.16c-0.645,-1.12875 -1.86781,-1.78719 -3.15781,-1.73344zM116.24781,103.2h28.94437l9.05688,29.29375l-23.52906,17.97938l-23.52906,-17.97938zM41.28,110.13375l21.59406,37.78625h-43.17469z"></path></g></g></svg>
+                    </mat-icon>
+                </mat-button-toggle>
+
+            <!--Line tool toggle button-->
+                <mat-button-toggle class="buttonContainerSide" title="ligne" value="line">
+                    <mat-icon class="white-icon">
+                        <!--Line icon-->
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                            width="26" height="26"
+                            viewBox="0 0 172 172"
+                            style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M159.38942,1.65385l-157.73558,157.73558l10.95673,11.16346l157.94231,-157.94231z"></path></g></g></svg>
+                        </mat-icon>
+                </mat-button-toggle>
+
+            <!--Text tools toggle button-->
+                <mat-button-toggle class="buttonContainerSide" title="Texte" value="text">
+                    <mat-icon class="white-icon">
+                        <!--Text icon-->
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                            width="24" height="24"
+                            viewBox="0 0 172 172"
+                            style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M28.66667,21.5v14.33333v14.33333h14.33333v-14.33333h35.83333v100.33333h-14.33333v14.33333h14.33333h14.33333h14.33333v-14.33333h-14.33333v-100.33333h35.83333v14.33333h14.33333v-21.5v-7.16667z"></path></g></g></svg>
+                    </mat-icon>
+                </mat-button-toggle>
+
+            <!--Bucket tools toggle button-->
+                <mat-button-toggle class="buttonContainerSide" title="Applicateur de couleur" value="color">
+                    <mat-icon class="white-icon">
+                        <!--Bucket icon-->
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                            width="24" height="24"
+                            viewBox="0 0 172 172"
+                            style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M78.045,10.32c-0.86,0 -1.67969,0.38969 -2.365,1.075l-2.4725,2.365c-15.13062,0.24188 -27.77531,2.53969 -36.98,6.7725c-9.36594,4.31344 -15.5875,11.15313 -15.5875,19.6725c0,6.5575 2.91594,12.22813 7.4175,16.4475c0.3225,0.30906 0.72563,0.56438 1.075,0.86l-18.1675,18.1675c-2.75469,2.75469 -4.085,6.53063 -4.085,10.32c0,3.78938 1.33031,7.56531 4.085,10.32l54.395,54.395c2.75469,2.75469 6.19469,4.085 10.32,4.085c3.78938,0 7.56531,-1.33031 10.32,-4.085l61.92,-62.0275c3.31906,3.72219 6.88,8.66719 6.88,13.4375c0,7.68625 -3.44,21.90313 -3.44,32.035c0,5.65719 4.66281,10.32 10.32,10.32c5.65719,0 10.32,-4.66281 10.32,-10.32v-36.765c0,-15.31875 -12.21469,-27.74844 -25.8,-37.3025c-12.99406,-9.15094 -27.60062,-15.73531 -36.335,-19.35l-29.3475,-29.3475c-0.68531,-0.68531 -1.6125,-1.075 -2.4725,-1.075zM77.7225,18.5975l26.5525,26.445c0.17469,0.28219 0.38969,0.5375 0.645,0.7525l37.84,37.84l-61.92,61.92c-2.75469,2.75469 -7.88781,2.75469 -10.6425,0l-54.395,-54.395c-1.37062,-1.37062 -2.0425,-3.09062 -2.0425,-5.16c0,-2.06937 0.67188,-3.7625 2.0425,-5.4825l19.0275,-19.0275c3.21156,1.85438 6.73219,3.45344 10.535,4.73c11.62344,3.91031 25.46406,5.42875 38.055,5.805c1.15563,2.16344 3.38625,3.655 6.02,3.655c3.80281,0 6.88,-3.07719 6.88,-6.88c0,-3.80281 -3.07719,-6.88 -6.88,-6.88c-2.45906,0 -4.58219,1.29 -5.805,3.225c-12.16094,-0.38969 -25.51781,-1.90812 -36.12,-5.4825c-6.15437,-2.06937 -11.27406,-4.8375 -14.7275,-8.0625c-3.45344,-3.225 -5.2675,-6.7725 -5.2675,-11.395c0,-5.24062 3.60125,-9.75562 11.61,-13.4375c6.50375,-2.99656 15.73531,-5.0525 26.875,-5.805l-27.52,27.1975c1.72,1.37063 4.16563,2.40531 6.235,3.44zM123.9475,54.825c6.00656,3.09063 12.45656,6.69188 18.3825,10.8575c12.81938,9.01656 22.79,20.19656 22.79,31.7125v36.765c0,1.90813 -1.53187,3.44 -3.44,3.44c-1.90812,0 -3.44,-1.53187 -3.44,-3.44c0,-8.43875 3.44,-22.52125 3.44,-32.035c0,-9.80937 -7.43094,-17.10594 -11.2875,-20.9625h-0.1075z"></path></g></g></svg>
+                    </mat-icon>
+                </mat-button-toggle>
+
+            <!--Draw "Éfface" tool-->
+                <mat-button-toggle class="buttonContainerSide" title="Éfface" value="eraser">
+                    <mat-icon class="white-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                        width="24" height="24"
+                        viewBox="0 0 172 172"
+                        style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M112.1225,13.8675c-2.70094,0 -5.34812,0.91375 -7.31,2.9025l-91.4825,92.45c-4.03125,4.07156 -4.03125,10.75 0,14.835l32.895,33.2175c0.65844,0.65844 1.54531,0.9675 2.4725,0.9675h92.3425c1.34375,0.20156 2.6875,-0.41656 3.42656,-1.55875c0.73906,-1.14219 0.73906,-2.62031 0,-3.7625c-0.73906,-1.14219 -2.08281,-1.76031 -3.42656,-1.55875h-54.9325l76.0025,-76.755c4.03125,-4.07156 4.03125,-10.76344 0,-14.835l-42.57,-43c-1.96187,-1.98875 -4.71656,-2.9025 -7.4175,-2.9025zM61.92,70.09l49.235,46.1175l-34.7225,35.1525h-26.3375l-31.82,-32.25c-1.35719,-1.38406 -1.35719,-3.57437 0,-4.945z"></path></g></g></svg>
+                    </mat-icon>
+                </mat-button-toggle>
+
+            <!--Draw "Grille" tool-->
+                <mat-button-toggle class="buttonContainerSide" title="Grille" value="grid">
+                    <mat-icon class="white-icon">grid_on</mat-icon>
+                </mat-button-toggle>
+
+            <!--Draw "Selection" tool-->
+                <mat-button-toggle class="buttonContainerSide" title="Selection" value="selection">
+                    <mat-icon class="white-icon">tab_unselected</mat-icon>
+                </mat-button-toggle>
+        </mat-button-toggle-group>
+
+        <!--Undo button-->
+        <div class="buttonContainerSide">
+            <button mat-button title="Annuler" class="undoRedo" (click)="undoRedo.undo()" [disabled]="undoRedo.unableToUndo">
+                <mat-icon>undo</mat-icon>
+            </button>
+        </div>
+
+        <!--Redo button-->
+        <div class="buttonContainerSide">
+            <button mat-button title="Refaire" class="undoRedo" (click)="undoRedo.redo()" [disabled]="undoRedo.unableToRedo">
+                <mat-icon>redo</mat-icon>
+            </button>
+        </div>
+
+        <!-- Bottom tool buttons group-->
+        <div class="toolButtonGroupContainerBottom">
+            
+            <!--Save button-->
+            <div class="buttonContainerSide">
+                <button mat-button title="Sauvegarder" (click)="openDialogSaveDrawZone()">
+                    <mat-icon class="white-icon">save</mat-icon>
+                </button>
+            </div>
+
+            <!--Export button-->
+            <div class="buttonContainerSide">
+                <button mat-button title="Exporter le dessin" (click)="openDialogExportDrawZone()">
+                    <mat-icon class="white-icon">launch</mat-icon>
+                </button>
+            </div>
+
+            <!--User guide button-->
+            <div class="buttonContainerSide">
+                <button mat-button title="Guide d'utilisation" (click)="goToUserGuide()">
+                    <mat-icon class="white-icon">info</mat-icon>
+                </button>
+            </div>
+
+            <!--Return button-->
+            <div class="buttonContainerSide">
+                <button mat-button title="Retour" (click)="goToMainMenu()">
+                    <mat-icon class="white-icon">arrow_back</mat-icon>
+                </button>
+            </div>
+        </div>
+
+
+    </mat-sidenav>
+
+    <!--Content of the tools sidenav, or Attributes sidenav-->
+    <mat-sidenav-content class="attMenuContainer">
+
+            <!--Attributes sidenav for the draw tool (brushes)-->
+            <div [ngSwitch]="buttonToggleValue" >
+                <div *ngSwitchCase="'draw'"><app-draw-tap></app-draw-tap></div>
+                <div *ngSwitchCase="'shape'"><app-shape-tap></app-shape-tap></div>
+                <div *ngSwitchCase="'line'"><app-line-tap></app-line-tap></div>
+                <div *ngSwitchCase="'text'"><app-text-tap></app-text-tap></div>
+                <div *ngSwitchCase="'color'"><app-color-tap></app-color-tap></div>
+                <div *ngSwitchCase="'eraser'"><app-erase-tap></app-erase-tap></div>
+                <div *ngSwitchCase="'grid'"><app-grid-tap></app-grid-tap></div>
+                <div *ngSwitchCase="'selection'"><app-selection-tap></app-selection-tap></div>
+            </div>
+
+        
+    </mat-sidenav-content>
+
+
+
+</mat-sidenav-container>

@@ -1,0 +1,34 @@
+<body>
+        <div class='rectangle'></div>
+        <h2 class='title'> Poly-Dessin</h2>
+        
+        <div class="bouton">
+  
+            <div id="option1">
+                <button mat-raised-button class="infoGuide" mat-button routerLink="/gallery">
+                    <i class="material-icons md-48"> photo </i> Ouvrir la Galerie de dessins
+                </button>
+
+                <button mat-raised-button class="infoGuide"  id="guide" mat-button title="Guide d'utilisation" routerLink="/userguide">
+                    <i class="material-icons md-48"> info </i> Afficher le Guide d’utilisation 
+                </button>
+            </div>
+    
+            
+            <div class="flexItem">
+                <canvas class="canvasPreview"></canvas>
+                <button mat-button (click)="newDrawing()">
+                    <mat-icon><img src="https://img.icons8.com/android/24/000000/plus.png">
+                    </mat-icon> Nouveau dessin
+                </button>
+            </div>
+
+            <div class="flexItem" [hidden]="!showOldDrawing">
+                <canvas class="canvasPreview" #svgConainter></canvas>
+                <button mat-button title="Sauvegarder" routerLink="/workzone">
+                    <mat-icon>save</mat-icon> Continuer Dessin
+                </button>
+            </div>
+                
+        </div>
+</body>

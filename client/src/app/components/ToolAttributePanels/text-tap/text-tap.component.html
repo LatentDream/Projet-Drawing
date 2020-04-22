@@ -1,0 +1,67 @@
+<div style="margin-left: 5px">
+    <p><b>Outil texte</b></p>
+    <!--<p style="font-size: larger;">Options pour la police : </p> -->
+    
+    <mat-form-field class="fontFam" appearance="fill">
+        <mat-label>Police</mat-label>
+        <mat-select [value]="fonts[0]" panelClass="trace-panel">
+                <mat-option  *ngFor="let font of fonts" (click)="updateFontFamily(font)" [value]="font"
+                    [class.selected-tool]="font === currentFontFamily">
+                    {{font}}
+                </mat-option>
+            </mat-select>
+      </mat-form-field>
+
+    <p>Taille de la police : </p>
+    <mat-slider (change)="updateFontSize($event)" thumbLabel [displayWith]="formatLabel" min="1" max="50" value="5"></mat-slider>
+
+    <p> Style de la police : </p>
+    <mat-button-toggle-group class="styleGroup" (change)="updateFontStyle($event.value)" value="normal">
+
+        <mat-button-toggle class="buttonContainer" title="Normal" value="normal">
+            <mat-icon>
+                <img src="https://img.icons8.com/ios-filled/20/000000/n.png"/>
+            </mat-icon>
+        </mat-button-toggle>
+
+        <mat-button-toggle class="buttonContainer" title="Gras" value="bold">
+            <mat-icon>
+                <img src="https://img.icons8.com/metro/20/000000/bold.png"/>
+            </mat-icon>
+        </mat-button-toggle>
+    
+    
+        <mat-button-toggle class="buttonContainer" title="Italic" value="italic">
+            <mat-icon>
+                <img src="https://img.icons8.com/metro/20/000000/italic.png"/>
+            </mat-icon>
+        </mat-button-toggle>
+    
+    </mat-button-toggle-group>
+
+    <p> Alignement du texte : </p>
+    <mat-button-toggle-group class="alignGroup" (change)="updateTextAlign($event.value)" value="start">
+
+        <mat-button-toggle class="buttonContainer" title="Gauche" value="left">
+            <mat-icon>
+                <img src="https://img.icons8.com/ios-glyphs/20/000000/align-left.png"/>
+            </mat-icon>
+        </mat-button-toggle>
+    
+        <mat-button-toggle class="buttonContainer" title="Milieu" value="middle">
+            <mat-icon>
+                <img src="https://img.icons8.com/android/20/000000/align-justify.png"/>
+            </mat-icon>
+        </mat-button-toggle>
+
+        <mat-button-toggle class="buttonContainer" title="Droite" value="end">
+            <mat-icon>
+                <img src="https://img.icons8.com/ios-glyphs/20/000000/align-right.png"/>
+            </mat-icon>
+        </mat-button-toggle>
+    
+    </mat-button-toggle-group>
+</div>
+<br>
+<p style="margin-left: 5px"><b>Palette de couleur</b></p>
+<app-color-tool></app-color-tool>
